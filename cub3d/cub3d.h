@@ -72,6 +72,8 @@ struct s_img
 	int				bits_per_pixel;
 	int				size_line;
 	int				endian;
+	int				width;
+	int				height;
 };
 
 struct s_map_info

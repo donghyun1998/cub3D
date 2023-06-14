@@ -6,7 +6,7 @@
 /*   By: donghyk2 <donghyk2@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 16:50:53 by donghyk2          #+#    #+#             */
-/*   Updated: 2023/06/14 16:50:54 by donghyk2         ###   ########.fr       */
+/*   Updated: 2023/06/14 17:01:38 by donghyk2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,19 @@ static void	put_pixel_to_img(int idx, t_ray *ray,
 	double	texture_pos;
 	double	step;
 
-	texture_x = (int)(ray->wall_x * (double)TEXT_WIDTH);
+	texture_x = (int)(ray->wall_x * (double)texture->width);
 	if ((ray->side == VERTICAL && ray->dx > 0)
 		|| (ray->side == HORIZONTAL && ray->dy < 0))
-		texture_x = TEXT_WIDTH - texture_x - 1;
-	step = 1.0 * TEXT_HEIGHT / ray->wall_height;
+		texture_x = texture->width - texture_x - 1;
+	step = 1.0 * texture->height / ray->wall_height;
 	texture_pos = (ray->draw_start - HEIGHT / 2 + ray->wall_height / 2) * step;
 	while (ray->draw_start <= ray->draw_end)
 	{
 		texture_y = (int)texture_pos;
 		texture_pos += step;
-		if (texture_y < TEXT_HEIGHT)
+		if (texture_y < texture->height)
 			img_buf[WIDTH * ray->draw_start + idx]
-				= texture->buffer[TEXT_WIDTH * texture_y + texture_x];
+				= texture->buffer[texture->width * texture_y + texture_x];
 		ray->draw_start++;
 	}
 }

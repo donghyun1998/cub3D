@@ -6,7 +6,7 @@
 /*   By: donghyk2 <donghyk2@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 16:50:58 by donghyk2          #+#    #+#             */
-/*   Updated: 2023/06/14 16:50:59 by donghyk2         ###   ########.fr       */
+/*   Updated: 2023/06/14 17:01:56 by donghyk2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,11 @@ void	init_map(t_cub *cub, char *filename)
 static t_img	*get_texture_img(t_cub *cub, char *path)
 {
 	t_img	*img;
-	int		width;
-	int		height;
 
 	img = malloc(sizeof(t_img));
 	if (img == NULL)
 		return (NULL);
-	img->img_ptr = mlx_xpm_file_to_image(cub->mlx_ptr, path, &width, &height);
+	img->img_ptr = mlx_xpm_file_to_image(cub->mlx_ptr, path, &(img->width), &(img->height));
 	if (img->img_ptr == NULL)
 	{
 		free(img);
