@@ -1,9 +1,9 @@
 # compile options
-NAME		= cub3d
+NAME		= cub3D
 CC			= cc
-CFLAGS		= -Wall -Wextra -Werror #-g3 -fsanitize=address
+CFLAGS		= -Wall -Wextra -Werror
 RM			= rm -f
-MLX			= -lmlx -framework OpenGL -framework Appkit # 확인해보긔
+MLX			= -Lmlx -lmlx -framework OpenGL -framework Appkit
 LIBFT		= -Llibft -lft
 
 # color
@@ -36,16 +36,18 @@ CUB_OBJS	= $(CUB_PATH:c=o)
 all: $(NAME)
 
 $(NAME): $(CUB_OBJS)
+	make -C mlx all
 	@make -sC libft all
 	@$(CC) $(CFLAGS) $(MLX) $(LIBFT) $^ -o $(NAME)
 	@echo "$(GREEN)╔═══════════════════════════════════════════════╗$(RESET)"
 	@echo "$(GREEN)║                                               ║$(RESET)"
-	@echo "$(GREEN)║                     cub3d                     ║$(RESET)"
+	@echo "$(GREEN)║                     cub3D                     ║$(RESET)"
 	@echo "$(GREEN)║               compile finished.               ║$(RESET)"
 	@echo "$(GREEN)║                                               ║$(RESET)"
 	@echo "$(GREEN)╚═══════════════════════════════════════════════╝$(RESET)"
 
 clean:
+	make -C mlx clean
 	@make -C libft clean
 	@$(RM) $(CUB_OBJS)
 	@echo "$(CYAN)╔═══════════════════════════════════════════════╗$(RESET)"
