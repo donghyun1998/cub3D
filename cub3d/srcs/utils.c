@@ -6,7 +6,7 @@
 /*   By: donghyk2 <donghyk2@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 16:51:14 by donghyk2          #+#    #+#             */
-/*   Updated: 2023/06/14 16:51:15 by donghyk2         ###   ########.fr       */
+/*   Updated: 2023/10/15 15:18:21 by donghyk2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,12 @@ void	free_images(t_cub *cub)
 		}
 	}
 }
-
+/**
+ * @brief 에러 처리하는 함수
+ *
+ * @param cub 구조체 cub
+ * @param message 출력 오류 메시지
+ */
 void	cub_error(t_cub *cub, char *message)
 {
 	free_map(&cub->map_info);

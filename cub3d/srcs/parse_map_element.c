@@ -6,7 +6,7 @@
 /*   By: donghyk2 <donghyk2@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 16:51:07 by donghyk2          #+#    #+#             */
-/*   Updated: 2023/06/14 16:51:08 by donghyk2         ###   ########.fr       */
+/*   Updated: 2023/10/15 15:24:38 by donghyk2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,14 @@ static int	is_map_element_set(t_cub *cub)
 			return (0);
 	return (1);
 }
-
+/**
+ * @brief Set the img path object
+ *
+ * @param cub
+ * @param path_ptr
+ * @param line
+ * @param flag
+ */
 static void	set_img_path(t_cub *cub, char **path_ptr,
 	char *line, t_element flag)
 {
@@ -76,7 +83,11 @@ static int	push_space(char *str)
 		idx++;
 	return (idx);
 }
-
+/**
+ * @brief cube의 4방향 면 구조체에 등록해주는 함수
+ *
+ * @param cub
+ */
 void	parse_map_element(t_cub *cub)
 {
 	char	*line;
