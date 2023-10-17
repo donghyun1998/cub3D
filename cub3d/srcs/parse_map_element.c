@@ -6,7 +6,7 @@
 /*   By: donghyk2 <donghyk2@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 16:51:07 by donghyk2          #+#    #+#             */
-/*   Updated: 2023/10/15 15:24:38 by donghyk2         ###   ########.fr       */
+/*   Updated: 2023/10/17 16:31:11 by donghyk2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ static int	push_space(char *str)
 	return (idx);
 }
 /**
- * @brief cube의 4방향 면 구조체에 등록해주는 함수
+ * @brief cube의 4방향 이미지 파일 경로 구조체에 등록해주는 함수
  *
  * @param cub
  */
