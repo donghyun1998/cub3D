@@ -6,7 +6,7 @@
 /*   By: donghyk2 <donghyk2@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 16:51:09 by donghyk2          #+#    #+#             */
-/*   Updated: 2023/10/17 16:32:37 by donghyk2         ###   ########.fr       */
+/*   Updated: 2023/10/30 19:34:38 by donghyk2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	parse_map(t_cub *cub)
 {
 	char	*line;
 
-	while (1)
+	while (42)
 	{
 		line = ft_strrepl(get_next_line(cub->fd), '\n', '\0');
 		if (line == NULL)
